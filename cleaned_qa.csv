@@ -1,0 +1,1351 @@
+question,answer,thread_title,url
+"My question is, why is this exam graded and carrying  20% weightage towards the final grade? Is this fair? we are loosing marks for the exam in which almost no one can score average. This situation is causing CGPAs to drop significantly. I request the team to consider this issue. Either make this exam ungraded or reduce its weightage. This is a very serious issue, as many of us are struggling to maintain good CGPAs to progress to the degree level.","I completely understand and share the concerns about the time constraints of the TDS exam. Given the challenging nature of the test, it seems quite difficult to complete all the questions within the allotted 45 minutes.
+I believe even the course team would find it challenging to solve this exam in such a short time frame.
+
+Perhaps considering a percentile-based grading system could be a fairer approach, as it would better reflect the relative performance of all students.
+
+This way, we can ensure that the grading is equitable and does not unfairly impact our CGPAs. I hope the team can consider this suggestion.",Is it fair to consider 20% weightage of such exam which is impossible to solve in given time (i.e. ROE),https://discourse.onlinedegree.iitm.ac.in/t/is-it-fair-to-consider-20-weightage-of-such-exam-which-is-impossible-to-solve-in-given-time-i-e-roe/141413/1
+"What is my opinion on ROE? It made me a better student. I was truly humbled by the experience. It gave me a realistic view of my abilities and the level I need to attain so that I can be confident in the value I am adding to the client. Who is the client? The businesses I might deal with, the companies I contract for.","Carlton at his best again !!! @carlton my apologies for being dramatic but I have been a TA for one of the foundational level courses and after that I gave up on being TA despite of having good grades in some subjects , to be honest at this point of time I envy you … You are nailing it as a TA …one of the best TAs I have seen in this course.",Is it fair to consider 20% weightage of such exam which is impossible to solve in given time (i.e. ROE),https://discourse.onlinedegree.iitm.ac.in/t/is-it-fair-to-consider-20-weightage-of-such-exam-which-is-impossible-to-solve-in-given-time-i-e-roe/141413/3
+"You can become a TA while doing the degree?? Never knew that, can you please lay out the process? It would be a fun and enriching experience for me.","Arun2:
+
+I still didn’t complain since the difficulty is “real”, and not made-up like with BDM theory/project.
+
+
+Come on. I didn’t complain. I just gave my observations. In fact, the only time I really complained in this course was when I was suddenly left hanging because the ROE stopped 15 minutes before the time shown in the portal. That was then. After seeing the difficulty level of the repeat ROE from yesterday, I’ve decided that I’m one of the lucky ones who was able to attempt the ROE last Sunday, regardless of the mess up from the support team.
+I’ve also said many times on Discourse that I think this is one of the best courses at IITM and nothing about it should be changed. I don’t know how you got an S in spite of a poor ROE. For me, I will have to score a perfect 100% in the ET to get an S, so I was just being realisitic when I requested for additional assignments to give students a fighting chance to score an S.",Is it fair to consider 20% weightage of such exam which is impossible to solve in given time (i.e. ROE),https://discourse.onlinedegree.iitm.ac.in/t/is-it-fair-to-consider-20-weightage-of-such-exam-which-is-impossible-to-solve-in-given-time-i-e-roe/141413/9
+"Also, is an S at TDS really hard this term? I scored one last term despite a poor RoE performance. I’m unable to recall now whether they gave us some extra marks out of pity","Sorry, didn’t mean to say that you’re complaining. Meant literally that I didn’t complain despite the unusual difficulty level though this sort of thing is usually a cause for concern.
+Maybe we got some extra marks last term then, I’m not sure. (A student with better memory than me can chime in)",Is it fair to consider 20% weightage of such exam which is impossible to solve in given time (i.e. ROE),https://discourse.onlinedegree.iitm.ac.in/t/is-it-fair-to-consider-20-weightage-of-such-exam-which-is-impossible-to-solve-in-given-time-i-e-roe/141413/10
+@Arun2 I think last term they gave an extra 5 mark bonus for the Roe mishap ?,"iitmanupam:
+
+students a fighting chance to score an S.
+
+
+I agree with your points.",Is it fair to consider 20% weightage of such exam which is impossible to solve in given time (i.e. ROE),https://discourse.onlinedegree.iitm.ac.in/t/is-it-fair-to-consider-20-weightage-of-such-exam-which-is-impossible-to-solve-in-given-time-i-e-roe/141413/14
+The grading assignment indicates I’m NOT eligible for a final score. Does that mean this subject wont be considered at all for the final course card?,"Yes, I got I grade, I registered for the courses opting for end term only and not repeating the entire course,
+I still got the assignments though, I can complete those, but I am not sure the new ones will be considered for evaluation, please clarify",Can I take the end-term exam without submitting assignments if I missed it due to an emergency?,https://discourse.onlinedegree.iitm.ac.in/t/can-i-take-the-end-term-exam-without-submitting-assignments-if-i-missed-it-due-to-an-emergency/161072/1
+sir did you check yet what is the problem in this one?,"from fastapi import FastAPI, Query
+from fastapi.middleware.cors import CORSMiddleware
+from typing import List, Optional
+import csv
+
+app = FastAPI()
+
+# Enable CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[""*""],  # Allow all origins
+    allow_credentials=True,
+    allow_methods=[""*""],  # Allow all methods
+    allow_headers=[""*""],  # Allow all headers
+)
+
+# Load student data from the specified CSV file
+students = []
+with open('/Users/mish/Downloads/q-fastapi.csv', mode='r') as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        students.append({
+            ""studentId"": int(row[""studentId""]),
+            ""class"": row[""class""]
+        })
+
+@app.get(""/api"")
+async def get_students(class_: Optional[List[str]] = Query(None)):
+    print(f""Requested classes: {class_}"")  # Debugging line
+    if class_:
+        filtered_students = [student for student in students if student[""class""] in class_]
+        print(f""Filtered students: {filtered_students}"")  # Debugging line
+        return {""students"": filtered_students}
+    return {""students"": students}
+
+if __name__ == ""__main__"":
+    import uvicorn
+    uvicorn.run(app, host=""127.0.0.1"", port=8000)",GA2 - Deployment Tools - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga2-deployment-tools-discussion-thread-tds-jan-2025/161120/12
+So if you send a request on http://127.0.0.1/api?class_=1S you will see response for that 1S class only.,"Hi Guddu,
+Inside index.html file of your repo, don’t put html code just put your email in the file nothing else.
+This issue is because when you deploy on github pages it encrypts any email that’s on page.
+kind regards.",GA2 - Deployment Tools - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga2-deployment-tools-discussion-thread-tds-jan-2025/161120/14
+So far no solution. Anyone else faced this issue and found a solution?,"Hi Telvin,
+Try opening localhost:8080 in browser if that works, if it opens in browser then issue might be with some network configurations.
+I solved this question in github codespace, which didn’t require me to make any changes in network.
+kind regards
+kind regards",GA2 - Deployment Tools - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga2-deployment-tools-discussion-thread-tds-jan-2025/161120/17
+Update: here is a video explaining the process - https://youtu.be/xa4zhP-S3NE?feature=shared,"Hi Avinash,
+Thats great work! I am glad you were able to use what you learnt from the course for something so practical. I hope you continue to develop and refine it, take feedback from the stakeholders who would be interested in this approach. I see a lot of potential in this project.
+Kind regards",Contribute to My Open-Source LLM Classroom Assignment Evaluator,https://discourse.onlinedegree.iitm.ac.in/t/contribute-to-my-open-source-llm-classroom-assignment-evaluator/161214/1
+where we can find tools in data science calendar link I cannot find it in my course tab?,"Hi Sahil,
+Please find it at the following location.
+Screenshot 2025-01-12 at 18.25.312474×1306 330 KB
+Kind regards",TDS calendar link not found,https://discourse.onlinedegree.iitm.ac.in/t/tds-calendar-link-not-found/162425/1
+My doubt is that “Will there be any coding level questions in the ROE and the weekly graded assignments?”,"In ROE , usually you have to find the answers of the questions by solving them using codes and tools explained in the course .
+For example you have a large pdf file of some patients and their disease and you are said to find number patients having some XYZ disease in that pdf . Now you can get this answer by using parsing tools and few lines of codes and after getting the results you can write that answer back in the portal .
+Same goes for assignments , they will be more like minor project works.",Way of conduction of exam,https://discourse.onlinedegree.iitm.ac.in/t/way-of-conduction-of-exam/163144/1
+Can anyone forward the specified links of the books(iitm certified(logo)) or pdf’s for preparation?,"@Divya1 there are no IITM certified books nor PDFs for Tools in Data Science. The site https://tds.s-anand.net/ is the reference.
+We update the content regularly. You might want to track the changes for recent updates.",TDS iitm certified books,https://discourse.onlinedegree.iitm.ac.in/t/tds-iitm-certified-books/163147/1
+I’m confused where exactly is the TDS course?,"Kindly refer to this post
+
+
+
+
+Tds jan 2025 calender accesss and video lecture access in portal Tools in Data Science
+
+
+@RaunakThatoi @jahnavih 
+The course content is available at 
+ [Screenshot 2025-01-13 at 22.47.14] 
+At Tools in Data Science the course calendar is also available. 
+ [Screenshot 2025-01-13 at 22.51.33] 
+Likewise the GAs also are available through the links in the seek portal as well as on the course domain shared above. 
+The course introduction has very important information. Many students who faced problems in Tools for Data Science in previous terms usually never read the intro. Please be dilig…
+  
+
+Kind regards",Tds jan 2025 calender accesss and video lecture access in portal,https://discourse.onlinedegree.iitm.ac.in/t/tds-jan-2025-calender-accesss-and-video-lecture-access-in-portal/163158/5
+"Despite saving multiple times, my score keeps resetting to zero. Should I refill the answers for all the questions before saving again? Could this issue also be caused by accessing the assignment from multiple devices?","Hi Shalini,
+We are aware of the issue and @s.anand is working on a solution. The temporary fix is to just reenter all the answers before hitting the Save button. Thanks for the reminder, please bear with the inconvenience while its being fixed.
+The last submission is always saved. So please make sure that your last submission contains all the answers for all the questions.
+Kind regards",Score keeps resetting to 0,https://discourse.onlinedegree.iitm.ac.in/t/score-keeps-resetting-to-0/163765/1
+"I am also facing the same issue. In my last submission the score was 7.25. Right now it is showing 0. The problem is i had few questions remaining to solve and i dont know which ones now. All of them r showing empty in the solution box. Also i didnt write my answers someplace else, so i would have to solve all the questions again? And also if i just for example for testing submit solution of 1 question now then my score would get reduced from 7.25 to the marks of that 1 question i submitted right?",Saved multiple times on the graded website as well submitted yes on the course tab but the score keeps resetting to 0 with no progress saved,Score keeps resetting to 0,https://discourse.onlinedegree.iitm.ac.in/t/score-keeps-resetting-to-0/163765/3
+"I understand there have been 2 TA-led sessions on 16th and 17th Jan, however the recordings were not found in the playlist - https://www.youtube.com/playlist?list=PL_h5u1jMeBCl1BquBhgunA4t08XAxsA-C","Hi Koustubh,
+We will upload session recordings by tomorrow.
+Thanks and Kind regards",TA Sessions youtube links,https://discourse.onlinedegree.iitm.ac.in/t/ta-sessions-youtube-links/164089/1
+Project details for TDS was supposed to be released on 17 jan ; how to access its details ?,"@23f30007561 @adi3
+It has been released. Thanks for keeping us on our toes 
+https://tds.s-anand.net/#/project-1
+
+
+
+
+Project 1 - LLM-based Automation Agent - Discussion Thread [TDS Jan 2025] Tools in Data Science
+
+
+    Please post any questions related to Project 1 - LLM-based Automation Agent. 
+Deadline: Saturday, February 15, 2025 6:29 PM (UTC) 
+@carlton @Jivraj @Saransh_Saini
+
+
+Kind regards",TDS Project 1 release information required,https://discourse.onlinedegree.iitm.ac.in/t/tds-project-1-release-information-required/164214/1
+"Sir, Is the same meeting link valid for all the  future live sessions? It would be really helpful if you could share the updates through mail.","This session will be uploaded on YouTube soon. In the meanwhile you can access the recording here
+
+drive.google.com
+
+
+
+Live Session - TDS - 2025/01/23 19:54 GMT+05:30 - Recording
+Google Drive file.",Agenda for Today's Live Session [Flask Tutorial],https://discourse.onlinedegree.iitm.ac.in/t/agenda-for-todays-live-session-flask-tutorial/164869/2
+I submitted my graded assignment for TDS course. But unfortunately I did not see the question in the portal asking if I have seen all questions and attended the exam. Can someone please clarify if it shall be graded still?,"@Muthupalaniappan
+It is saying you did not attempt it because you did not answer the seek portal question.
+You are not graded on the seek portal question. It only exists to make sure you saw the GA and attempted it. You are only graded on your submission of GA1 on the actual assignment page where your last saved submission is used for grading.
+Kind regards",Graded assignment 1 - Submission not shown,https://discourse.onlinedegree.iitm.ac.in/t/graded-assignment-1-submission-not-shown/165396/1
+"I encountered the same issue as mentioned. Could you please confirm whether GA 1 will still be evaluated under this condition, and if we will receive our actual score based on the last saved submission on the assignment page?",sir can you please allow us to submit it . like open the seek portal for a few mins . because we have worked hard to finished the assignment and all our hardwork will be in vain … please,Graded assignment 1 - Submission not shown,https://discourse.onlinedegree.iitm.ac.in/t/graded-assignment-1-submission-not-shown/165396/3
+"According to your previous replies, does it imply that only the answers submitted through the link provided will be considered for evaluation regardless of the seek portal selection for this time?","@23f2005471
+Correct! Only scores that were saved in your actual last submission on the ga page itself will be evaluated (the portal question is just to make sure you were aware of the GA and confirm that you attempted it).
+Kind regards",Graded assignment 1 - Submission not shown,https://discourse.onlinedegree.iitm.ac.in/t/graded-assignment-1-submission-not-shown/165396/7
+"For the TDS week 1 assignment, I have submitted it in the link (this link) that was mentioned in the graded assignment but I did not submit yes in the portal tab. Can you please help me out this one time??","Good evening, I have submitted my GA1 in the ex website
+image1895×885 65.2 KBI
+however, I was unable to submit [press the yes] on the iitm TDS coursework site.
+I just wanted to confirm that my assignment will be graded and taken into consideration.
+Thank you",Graded assignment 1 - Submission not shown,https://discourse.onlinedegree.iitm.ac.in/t/graded-assignment-1-submission-not-shown/165396/11
+"If there are live sessions that will be conducted, can we have some hands on tutorial for the project ?","Hi Sakthivel,
+We are still covering the precursors for Project. Once we cover the required topics then we will have sessions that work through the project with the students.
+Kind regards",Live sessions regarding Project 1,https://discourse.onlinedegree.iitm.ac.in/t/live-sessions-regarding-project-1/165593/1
+"Is it considered best practice to create a virtual environment rather than installing packages globally, especially when working on projects that require multiple libraries? I understand that in a professional setting, we often work on multiple projects simultaneously, and developing the habit of using virtual environments now can help reinforce this practice for future projects.","Yes, using a virtual environment is definitely considered best practice when working on Python projects. This approach helps avoid dependency conflicts between projects and ensures a consistent development environment. The main reasons why you should use virtual environments:
+
+
+Isolation – Each project has its own set of dependencies, preventing conflicts with other projects.
+
+
+Reproducibility – A virtual environment ensures that all contributors work with the same dependencies.
+
+
+Portability – You can share a project with others (or deploy it) without worrying about system-wide package versions interfering.
+
+
+
+
+Installing with pip individually (pip install package-name)
+
+• Good for quick experimentation and testing.
+• Not ideal for long-term project management because dependencies might update and break compatibility over time.
+
+Using requirements.txt
+
+• Best for reproducibility and collaboration since others can install the exact same dependencies using pip install -r requirements.txt.
+• Avoids issues where one developer uses an updated library that breaks compatibility with another developer’s setup.
+Specifying Versions in requirements.txt
+• If you don’t specify a version, pip install -r requirements.txt will install the latest available versions, which might introduce unexpected breaking changes.
+• If you do specify a version (package==1.2.3), you ensure consistency but may run into problems if that version becomes unavailable or has compatibility issues.
+Handling Version Conflicts
+• If a package version fails to install, try removing the strict version constraint and reinstall.
+• Instead of completely omitting version numbers, consider:
+• Using greater than/less than constraints: package>=1.2,<2.0 (allows updates but avoids major version changes).
+• Running pip freeze > requirements.txt after confirming a stable environment.
+Best Practices Summary
+
+Always use a virtual environment (e.g., venv or conda).
+Use a requirements.txt file for reproducibility.
+Pin versions cautiously—avoid unnecessary strict versioning unless needed.
+Periodically review and update dependencies to prevent using outdated or insecure packages.
+
+Kind regards",Best Practices for Virtual Environments and Dependency Management in Python,https://discourse.onlinedegree.iitm.ac.in/t/best-practices-for-virtual-environments-and-dependency-management-in-python/165922/1
+"Additionally, when managing dependencies, would it be better to install packages individually using pip or list them in a requirements.txt file? My understanding is that if a version is not specified in the requirements.txt file, it installs the latest available version, whereas specifying a version ensures a specific installation. However, I have encountered instances where a specific version failed to install, requiring me to modify the requirements.txt file and remove the version constraint. In such cases, wouldn’t installing directly via pip be more practical?","Thank you sir for clarifying.
+
+
+
+ carlton:
+
+• Using greater than/less than constraints: package>=1.2,<2.0 (allows updates but avoids major version changes).
+
+
+I wasn’t aware of greater than/less than constraint. This would definitely address the error I mentioned in my question.",Best Practices for Virtual Environments and Dependency Management in Python,https://discourse.onlinedegree.iitm.ac.in/t/best-practices-for-virtual-environments-and-dependency-management-in-python/165922/1
+what is the error here?? sir @Jivraj,"@22f3001315 @21f3002277 @24ds2000024 – please try again after reloading the page. The new error message will be clearer, like this:
+Error: At [0].rating: Values don't match. Expected: ""7.4"". Actual: 7.4
+
+FYI, we expect all values as strings, not numbers. That’s because the year can sometimes be a range for a TV series (e.g. 2021 - 2024) and the rating can sometimes be missing.",GA4 - Data Sourcing - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga4-data-sourcing-discussion-thread-tds-jan-2025/165959/3
+"In Question 2, it is specifically said to filter the movies however, the evaluator is expecting a TV show there. Should we also include TV shows now?","@23f2000237 A good point. Yes, please include all titles. I’ve reworded the question accordingly. Thanks.",GA4 - Data Sourcing - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga4-data-sourcing-discussion-thread-tds-jan-2025/165959/7
+"edit:  This is an everchanging dataset, so will our answers be saved, as, this json might not be in this order tomorrow?","Dear Sir,
+I was at 2/10 yesterday. After pasting JSON file of IMDB & reloading as suggested My marks updated to 3/10. Kindly confirm if I have got whole of IMDB question.",GA4 - Data Sourcing - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga4-data-sourcing-discussion-thread-tds-jan-2025/165959/7
+Q3. How to handle the error ? @Jivraj,"There is no submit button is available in below screen. Is it fine to save the link url only. Please clarify (unless we click submit button the log of Graded Assignment 4 remains red)
+image1920×1080 337 KB",GA4 - Data Sourcing - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga4-data-sourcing-discussion-thread-tds-jan-2025/165959/9
+http://127.0.0.1:8000/api/outline?country=Russia,Anyone scoring 10/10 on GA4 and replying with a relevant message on this thread will get 11/10,GA4 - Data Sourcing - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga4-data-sourcing-discussion-thread-tds-jan-2025/165959/9
+Q4. How to handle the error ? @Jivraj,"For me I just made filter of rating between 2 and 7 in site and typed in console as per  video. with that data got in console worked fine.
+copy the coding and save in place use it for data extract when finally submit",GA4 - Data Sourcing - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga4-data-sourcing-discussion-thread-tds-jan-2025/165959/14
+"I have a doubt regarding the bonus mark. Suppose someone were to get 10/10 in the assignment, would their mark be recored as 11/10 or just 10?","For question 2 getting Error: At [8].title: Values don’t match. Expected: “9. Un matrimonio di troppo”. Actual: “9. You’re Cordially Invited” But this movie is not found when searched by name
+image1414×295 19 KB",GA4 - Data Sourcing - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga4-data-sourcing-discussion-thread-tds-jan-2025/165959/16
+how to get the BBC weather API key?,"@JoelJeffrey It will be added to the GA4 marks, not the final grade. So, it’s roughly worth 0.15% on the total - not a full 1% on the total.",GA4 - Data Sourcing - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga4-data-sourcing-discussion-thread-tds-jan-2025/165959/20
+I was wondering if we can have access to the companion notebook for the application for order built on 31st Jan 2025. Where can we access this ?,"Hi Vikram,
+Those notebooks are for internal purpose only, we don’t use to share them.
+Kind regards",Access to Notebooks,https://discourse.onlinedegree.iitm.ac.in/t/access-to-notebooks/166100/1
+"What happened? I picked random duration from the video of 10-40 seconds, but forgot to ensure that the end time should not exceed the video length. That’s what I fixed.",i guess there’s some issue in 5th question as i have correctly filtered the data in OpenRefine 2-3 times but still getting incorrect in the portal.,GA5 - Data Preparation - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga5-data-preparation-discussion-thread-tds-jan-2025/166576/4
+How many units of Bacon were sold in São Paulo on transactions with at least 151 units?,"Update: I tried for both (thank god for filters in Excel) and Sunday is what the question is asking for. The Instruction above for “Saturday” is incorrect- maybe the logic generating different questions for different students can be tweaked-
+Thank you",GA5 - Data Preparation - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga5-data-preparation-discussion-thread-tds-jan-2025/166576/10
+Please clarify “SUNDAY” or “SATURDAY”?,"I’ve attempted this question several times and I’m fairly certain that the answer to this question is incorrect. I’d be grateful if the answer to this question was re-checked. I can share the answer I’m certain about here, however I do not think it would be prudent to do so given this is a public forum.
+Please consider my request and double check-
+@Jivraj, @carlton
+Thank you
+grab-IIT-Madras--Microsoft Edge_at_23.15.25_on__14-02-2025__0032551920×1317 210 KB",GA5 - Data Preparation - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga5-data-preparation-discussion-thread-tds-jan-2025/166576/11
+Any signal for this question?,"tried google sheets - it autoformatted my date data, also i realized later i was applying the formula the wrong way.
+image987×176 14.4 KB
+Date formatted and filtered successfully",GA5 - Data Preparation - Discussion Thread [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/ga5-data-preparation-discussion-thread-tds-jan-2025/166576/16
+Can you please elaborate a little bit what should be the steps ?,"Connect to the GitHub API-  it lets you fetch user data automatically(go to github developer settings ->personal acceess tokens->tokens(classic)
+Search for Users with criteria mentioned in your question
+We organize the list from newest to oldest, making it easy to spot the freshest account.",Doubt in GA4 Q7,https://discourse.onlinedegree.iitm.ac.in/t/doubt-in-ga4-q7/166634/3
+"@Carlton D’Silva sir can u please see this why it’s given zero, it should be 8 right n in my dashboard it’s showing absent so what i should do ?","Please refer to this post
+
+
+
+
+GRADED ASSIGNMENT RESULT NOT SHOWING , kindly check on this Tools in Data Science
+
+
+    On the 13th of Feb (3 day ago at the time of this reply) an email was sent to all students with the subject [TDS Jan 2025] Grade Corrections. Please refer to that email. 
+Kind regards",Graded Assignments Dashboard Scores Incorrect/Missing,https://discourse.onlinedegree.iitm.ac.in/t/graded-assignments-dashboard-scores-incorrect-missing/166816/20
+Is it important to use an IITM mail ID in GitHub for the project?,"Currently we do not have any explicit policy regarding requiring IITM email as the github profile name or the github repo owner.
+We DO however require you to use your IITM email when submitting the project submission form.
+We are clarifying with operations at the moment if this arrangement satisfies their requirements. If it changes we will make a general announcement via email, portal and discourse.
+(we do not expect the current requirements of github to change)
+Kind regards",Regarding Github Mail For Project,https://discourse.onlinedegree.iitm.ac.in/t/regarding-github-mail-for-project/166891/1
+"When I am downloading the data folder after processing datagen.py , it is trying to download in root folder and it is facing permission error . how can we overcome this ?","Hi Vikram,
+This is because (if you watched the session, or examined the code, you would have realised that) datagen.py was designed to run inside your docker container. And datagen.py (or a similar named file which we will not tell you ahead of time and will be provided as the query parameter in task A1) will normally be called by evaluate.py
+Inside the docker container, permission for the data folder is set by the Dockerfile
+which then allows your application to access the root folder inside your docker image and create the /data folder.
+So the workflow is like this (for your internal testing only… please follow the Project page for deliverables and evaluation to submit project successfully):
+
+You create your application server that serves 2 endpoints on localhost:8000
+You create a docker image that runs this application server.
+You run the docker image using podman as described in the project page.
+For mimicking the testing conditions. You need two files:
+evaluate.py and datagen.py to be in the same folder where you are running these two scripts.
+Run evalute.py using uv.
+
+If your docker image is correctly configured and your application is correctly configured, then all the tasks run by evaluate.py will correctly tell you if the application is producing the right result for each task.
+Hope that gives clarity.
+Kind regards",Sudo permission needed to create data folder in root?,https://discourse.onlinedegree.iitm.ac.in/t/sudo-permission-needed-to-create-data-folder-in-root/167072/1
+Question: What creates the /data/contacts.json file?,"sir kindly help me with this the time is running and i am still at the starting stage of project.
+@carlton",Regarding project1 for file not detecting after sending post request,https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/2
+sir i have used the dot(.) while sending the request to postman in the query which i provided to the task. Is the dot(.) should be added somewhere else?,"If you have added that dot as a prefix to your locations then, you would have to structure your query_gpt in such a way that it takes these dots into consideration.",Regarding project1 for file not detecting after sending post request,https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/6
+"and also i am sending postman request as http://localhost:8000/run?task=The file ./data/dates.txt contains a list of dates, one per line. Count the number of Wednesdays in the list, and write just the number to ./data/dates-wednesdays.txt",have you first post a request for task A1 as it creates the data folder along with  all the other files .,Regarding project1 for file not detecting after sending post request,https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8
+do I need to use dockerfile for this? i am still getting the same error as,"by running task A1 , it automatically creates a data folder along with all the files in it. Without running task A1 you can’t do rest of A tasks",Regarding project1 for file not detecting after sending post request,https://discourse.onlinedegree.iitm.ac.in/t/regarding-project1-for-file-not-detecting-after-sending-post-request/167172/8
+??? You are joking? BUT really maybe 11:59 + 2 hours,This project is due on 16 Feb 2025 EoD IST. Results will be announced by 26 Feb 2025.,Project 1 - Casual banter,https://discourse.onlinedegree.iitm.ac.in/t/project-1-casual-banter/167344/6
+Shall I just change the name of the file from ‘dockerfile’ to ‘Dockerfile’ in github repository of mine or is there anything else that is needed to detect the Dockerfile?,Oh ok made the changes in Github. I hope submitting again is not required since the links and names are same.,IMPORTANT: Dockerfile submitted as dockerfile rest everything is working fine,https://discourse.onlinedegree.iitm.ac.in/t/important-dockerfile-submitted-as-dockerfile-rest-everything-is-working-fine/167415/1
+Is the GitHub repo public?,"Sir, i got this mail. I have checked that the repo is public and already has a Dockerfile.
+I have renamed the ‘LICENSE’ file as ‘MIT LICENSE’.",IMPORTANT: Dockerfile submitted as dockerfile rest everything is working fine,https://discourse.onlinedegree.iitm.ac.in/t/important-dockerfile-submitted-as-dockerfile-rest-everything-is-working-fine/167415/2
+Does it have an MIT license?,"Sir, please consider it we have spent a lot of time, in my case just the d in Dockerfile was small that too on remote repository. On my local repository it was Dockerfile only I even have a published docker image as verified by you autated script only. The name of the file on remote repository did not change even after commit it through my local repo, once I read the mail in morning it was only then I realised it wasn’t changed on GitHub repo.
+Sir I understand the deadline has passed and I am not asking for a resubmission, I am just asking to consider the already submitted work, just that. It would be really helpful. I just have one commit on my repo that too “Rename dockerfile to Dokerfile” . Sir please attest consider what we have already submitted. I have made no changes as you can verify it too.
+Sir it is a humble request to please consider it.
+Warm Regards,
+Satvik Sawhney
+23f2003680
+Screenshot 2025-02-18 at 1.53.10 PM1889×467 54 KB",IMPORTANT: Dockerfile submitted as dockerfile rest everything is working fine,https://discourse.onlinedegree.iitm.ac.in/t/important-dockerfile-submitted-as-dockerfile-rest-everything-is-working-fine/167415/2
+@Saransh_Saini sir what should i do?,"Good Morning Sir,
+Sir even I am facing a similar issue, even though sanity check for docker image on docker hub was cleared but got a mail saying ‘dockerfile’ not present in the GitHub repo while it clearly was. Sir please look into it we have given so many days to complete this project.
+Looking forward to your reply.
+Thank you
+Satvik Sawhney
+23f2003680",Project 1 Submission Marked as FAIL Despite Having Dockerfile & Image,https://discourse.onlinedegree.iitm.ac.in/t/project-1-submission-marked-as-fail-despite-having-dockerfile-image/167471/2
+"The deadlines mentioned in the Grading Document provided and the TDS website (s-anand.net) are different. Project-1’s deadline was 15 Feb, it was then postponed to the 16th of Feb. Can this be reflected here?","@23f1003186
+Thanks for letting us know (it might take a little while to fix)
+Kind regards",Inconsistent information in the Grading Document and the website,https://discourse.onlinedegree.iitm.ac.in/t/inconsistent-information-in-the-grading-document-and-the-website/167679/1
+For the same question? But it shouldnt be +1 -1 to get the correct answer right.,"We have determined that some students were affected by GA5 Q3. Whoever we have identified as having received the incorrect assessment will receive 1 mark for that particular question. These are the students that we have identified as been assessed incorrectly:
+
+
+
+
+SN
+Email
+
+
+
+
+1
+21f1000131@ds.study.iitm.ac.in
+
+
+2
+21f1001484@ds.study.iitm.ac.in
+
+
+3
+21f1001631@ds.study.iitm.ac.in
+
+
+4
+21f1001729@ds.study.iitm.ac.in
+
+
+5
+21f1001890@ds.study.iitm.ac.in
+
+
+6
+21f1002734@ds.study.iitm.ac.in
+
+
+7
+21f1002773@ds.study.iitm.ac.in
+
+
+8
+21f1003135@ds.study.iitm.ac.in
+
+
+9
+21f1003475@ds.study.iitm.ac.in
+
+
+10
+21f1003816@ds.study.iitm.ac.in
+
+
+11
+21f1005422@ds.study.iitm.ac.in
+
+
+12
+21f1005510@ds.study.iitm.ac.in
+
+
+13
+21f1006234@ds.study.iitm.ac.in
+
+
+14
+21f1006309@ds.study.iitm.ac.in
+
+
+15
+21f1006867@ds.study.iitm.ac.in
+
+
+16
+21f2000525@ds.study.iitm.ac.in
+
+
+17
+21f2000913@ds.study.iitm.ac.in
+
+
+18
+21f2000998@ds.study.iitm.ac.in
+
+
+19
+21f2001061@ds.study.iitm.ac.in
+
+
+20
+21f2001080@ds.study.iitm.ac.in
+
+
+21
+21f2001543@ds.study.iitm.ac.in
+
+
+22
+21f3000311@ds.study.iitm.ac.in
+
+
+23
+21f3000355@ds.study.iitm.ac.in
+
+
+24
+21f3000512@ds.study.iitm.ac.in
+
+
+25
+21f3000591@ds.study.iitm.ac.in
+
+
+26
+21f3000687@ds.study.iitm.ac.in
+
+
+27
+21f3000813@ds.study.iitm.ac.in
+
+
+28
+21f3001091@ds.study.iitm.ac.in
+
+
+29
+21f3001161@ds.study.iitm.ac.in
+
+
+30
+21f3001936@ds.study.iitm.ac.in
+
+
+31
+21f3001965@ds.study.iitm.ac.in
+
+
+32
+21f3002158@ds.study.iitm.ac.in
+
+
+33
+21f3002431@ds.study.iitm.ac.in
+
+
+34
+21f3002444@ds.study.iitm.ac.in
+
+
+35
+21f3002647@ds.study.iitm.ac.in
+
+
+36
+21f3002782@ds.study.iitm.ac.in
+
+
+37
+21f3003195@ds.study.iitm.ac.in
+
+
+38
+22ds2000011@ds.study.iitm.ac.in
+
+
+39
+22f1000376@ds.study.iitm.ac.in
+
+
+40
+22f1000821@ds.study.iitm.ac.in
+
+
+41
+22f1000902@ds.study.iitm.ac.in
+
+
+42
+22f1000935@ds.study.iitm.ac.in
+
+
+43
+22f1000989@ds.study.iitm.ac.in
+
+
+44
+22f1001095@ds.study.iitm.ac.in
+
+
+45
+22f1001316@ds.study.iitm.ac.in
+
+
+46
+22f1001391@ds.study.iitm.ac.in
+
+
+47
+22f1001416@ds.study.iitm.ac.in
+
+
+48
+22f1001438@ds.study.iitm.ac.in
+
+
+49
+22f1001542@ds.study.iitm.ac.in
+
+
+50
+22f1001551@ds.study.iitm.ac.in
+
+
+51
+22f1001552@ds.study.iitm.ac.in
+
+
+52
+22f1001862@ds.study.iitm.ac.in
+
+
+53
+22f2000108@ds.study.iitm.ac.in
+
+
+54
+22f2000113@ds.study.iitm.ac.in
+
+
+55
+22f2000116@ds.study.iitm.ac.in
+
+
+56
+22f2000273@ds.study.iitm.ac.in
+
+
+57
+22f2000467@ds.study.iitm.ac.in
+
+
+58
+22f2000813@ds.study.iitm.ac.in
+
+
+59
+22f2000898@ds.study.iitm.ac.in
+
+
+60
+22f2000946@ds.study.iitm.ac.in
+
+
+61
+22f2001041@ds.study.iitm.ac.in
+
+
+62
+22f2001336@ds.study.iitm.ac.in
+
+
+63
+22f2001532@ds.study.iitm.ac.in
+
+
+64
+22f2001590@ds.study.iitm.ac.in
+
+
+65
+22f3000275@ds.study.iitm.ac.in
+
+
+66
+22f3000337@ds.study.iitm.ac.in
+
+
+67
+22f3000419@ds.study.iitm.ac.in
+
+
+68
+22f3000422@ds.study.iitm.ac.in
+
+
+69
+22f3000487@ds.study.iitm.ac.in
+
+
+70
+22f3000563@ds.study.iitm.ac.in
+
+
+71
+22f3000694@ds.study.iitm.ac.in
+
+
+72
+22f3000814@ds.study.iitm.ac.in
+
+
+73
+22f3000819@ds.study.iitm.ac.in
+
+
+74
+22f3000831@ds.study.iitm.ac.in
+
+
+75
+22f3000833@ds.study.iitm.ac.in
+
+
+76
+22f3001050@ds.study.iitm.ac.in
+
+
+77
+22f3001074@ds.study.iitm.ac.in
+
+
+78
+22f3001108@ds.study.iitm.ac.in
+
+
+79
+22f3001278@ds.study.iitm.ac.in
+
+
+80
+22f3001316@ds.study.iitm.ac.in
+
+
+81
+22f3001675@ds.study.iitm.ac.in
+
+
+82
+22f3001688@ds.study.iitm.ac.in
+
+
+83
+22f3001777@ds.study.iitm.ac.in
+
+
+84
+22f3001834@ds.study.iitm.ac.in
+
+
+85
+22f3001930@ds.study.iitm.ac.in
+
+
+86
+22f3001961@ds.study.iitm.ac.in
+
+
+87
+22f3001967@ds.study.iitm.ac.in
+
+
+88
+22f3002011@ds.study.iitm.ac.in
+
+
+89
+22f3002175@ds.study.iitm.ac.in
+
+
+90
+22f3002184@ds.study.iitm.ac.in
+
+
+91
+22f3002236@ds.study.iitm.ac.in
+
+
+92
+22f3002265@ds.study.iitm.ac.in
+
+
+93
+22f3002291@ds.study.iitm.ac.in
+
+
+94
+22f3002307@ds.study.iitm.ac.in
+
+
+95
+22f3002394@ds.study.iitm.ac.in
+
+
+96
+22f3002447@ds.study.iitm.ac.in
+
+
+97
+22f3002498@ds.study.iitm.ac.in
+
+
+98
+22f3002565@ds.study.iitm.ac.in
+
+
+99
+22f3002634@ds.study.iitm.ac.in
+
+
+100
+22f3002712@ds.study.iitm.ac.in
+
+
+101
+22f3002813@ds.study.iitm.ac.in
+
+
+102
+22f3002844@ds.study.iitm.ac.in
+
+
+103
+22f3002948@ds.study.iitm.ac.in
+
+
+104
+22f3003003@ds.study.iitm.ac.in
+
+
+105
+22f3003237@ds.study.iitm.ac.in
+
+
+106
+23ds1000032@ds.study.iitm.ac.in
+
+
+107
+23ds2000055@ds.study.iitm.ac.in
+
+
+108
+23ds2000069@ds.study.iitm.ac.in
+
+
+109
+23ds3000146@ds.study.iitm.ac.in
+
+
+110
+23ds3000149@ds.study.iitm.ac.in
+
+
+111
+23ds3000224@ds.study.iitm.ac.in
+
+
+112
+23f1000232@ds.study.iitm.ac.in
+
+
+113
+23f1000257@ds.study.iitm.ac.in
+
+
+114
+23f1000292@ds.study.iitm.ac.in
+
+
+115
+23f1000587@ds.study.iitm.ac.in
+
+
+116
+23f1000776@ds.study.iitm.ac.in
+
+
+117
+23f1000813@ds.study.iitm.ac.in
+
+
+118
+23f1000844@ds.study.iitm.ac.in
+
+
+119
+23f1001472@ds.study.iitm.ac.in
+
+
+120
+23f1001651@ds.study.iitm.ac.in
+
+
+121
+23f1001684@ds.study.iitm.ac.in
+
+
+122
+23f1001788@ds.study.iitm.ac.in
+
+
+123
+23f1001861@ds.study.iitm.ac.in
+
+
+124
+23f1002075@ds.study.iitm.ac.in
+
+
+125
+23f1002114@ds.study.iitm.ac.in
+
+
+126
+23f1002279@ds.study.iitm.ac.in
+
+
+127
+23f1002345@ds.study.iitm.ac.in
+
+
+128
+23f1002362@ds.study.iitm.ac.in
+
+
+129
+23f1002535@ds.study.iitm.ac.in
+
+
+130
+23f1002563@ds.study.iitm.ac.in
+
+
+131
+23f1002586@ds.study.iitm.ac.in
+
+
+132
+23f1002630@ds.study.iitm.ac.in
+
+
+133
+23f1002929@ds.study.iitm.ac.in
+
+
+134
+23f1003000@ds.study.iitm.ac.in
+
+
+135
+23f1003115@ds.study.iitm.ac.in
+
+
+136
+23f2000119@ds.study.iitm.ac.in
+
+
+137
+23f2000273@ds.study.iitm.ac.in
+
+
+138
+23f2000762@ds.study.iitm.ac.in
+
+
+139
+23f2000794@ds.study.iitm.ac.in
+
+
+140
+23f2000822@ds.study.iitm.ac.in
+
+
+141
+23f2000926@ds.study.iitm.ac.in
+
+
+142
+23f2000942@ds.study.iitm.ac.in
+
+
+143
+23f2001274@ds.study.iitm.ac.in
+
+
+144
+23f2001347@ds.study.iitm.ac.in
+
+
+145
+23f2001494@ds.study.iitm.ac.in
+
+
+146
+23f2001529@ds.study.iitm.ac.in
+
+
+147
+23f2001539@ds.study.iitm.ac.in
+
+
+148
+23f2001661@ds.study.iitm.ac.in
+
+
+149
+23f2001960@ds.study.iitm.ac.in
+
+
+150
+23f2001992@ds.study.iitm.ac.in
+
+
+151
+23f2002034@ds.study.iitm.ac.in
+
+
+152
+23f2002121@ds.study.iitm.ac.in
+
+
+153
+23f2002865@ds.study.iitm.ac.in
+
+
+154
+23f2002939@ds.study.iitm.ac.in
+
+
+155
+23f2003529@ds.study.iitm.ac.in
+
+
+156
+23f2003751@ds.study.iitm.ac.in
+
+
+157
+23f2003893@ds.study.iitm.ac.in
+
+
+158
+23f2004115@ds.study.iitm.ac.in
+
+
+159
+23f2004244@ds.study.iitm.ac.in
+
+
+160
+23f2004366@ds.study.iitm.ac.in
+
+
+161
+23f2004443@ds.study.iitm.ac.in
+
+
+162
+23f2004473@ds.study.iitm.ac.in
+
+
+163
+23f2004510@ds.study.iitm.ac.in
+
+
+164
+23f2004637@ds.study.iitm.ac.in
+
+
+165
+23f2004770@ds.study.iitm.ac.in
+
+
+166
+23f2004793@ds.study.iitm.ac.in
+
+
+167
+23f2004936@ds.study.iitm.ac.in
+
+
+168
+23f2004979@ds.study.iitm.ac.in
+
+
+169
+23f2005010@ds.study.iitm.ac.in
+
+
+170
+23f2005193@ds.study.iitm.ac.in
+
+
+171
+23f2005325@ds.study.iitm.ac.in
+
+
+172
+23f2005398@ds.study.iitm.ac.in
+
+
+173
+23f2005474@ds.study.iitm.ac.in
+
+
+174
+23f2005525@ds.study.iitm.ac.in
+
+
+175
+23f2005665@ds.study.iitm.ac.in
+
+
+176
+23f2005701@ds.study.iitm.ac.in
+
+
+177
+23f2005706@ds.study.iitm.ac.in
+
+
+178
+23f2005738@ds.study.iitm.ac.in
+
+
+179
+23f3000975@ds.study.iitm.ac.in
+
+
+180
+23f3001271@ds.study.iitm.ac.in
+
+
+181
+23f3001462@ds.study.iitm.ac.in
+
+
+182
+23f3001572@ds.study.iitm.ac.in
+
+
+183
+23f3001745@ds.study.iitm.ac.in
+
+
+184
+23f3001752@ds.study.iitm.ac.in
+
+
+185
+23f3001764@ds.study.iitm.ac.in
+
+
+186
+23f3001848@ds.study.iitm.ac.in
+
+
+187
+23f3002196@ds.study.iitm.ac.in
+
+
+188
+23f3002427@ds.study.iitm.ac.in
+
+
+189
+23f3002537@ds.study.iitm.ac.in
+
+
+190
+23f3002643@ds.study.iitm.ac.in
+
+
+191
+23f3003016@ds.study.iitm.ac.in
+
+
+192
+23f3003027@ds.study.iitm.ac.in
+
+
+193
+23f3003871@ds.study.iitm.ac.in
+
+
+194
+23f3004013@ds.study.iitm.ac.in
+
+
+195
+23f3004024@ds.study.iitm.ac.in
+
+
+196
+23f3004066@ds.study.iitm.ac.in
+
+
+197
+23f3004134@ds.study.iitm.ac.in
+
+
+198
+23f3004230@ds.study.iitm.ac.in
+
+
+199
+23f3004238@ds.study.iitm.ac.in
+
+
+200
+23f3004264@ds.study.iitm.ac.in
+
+
+201
+23f3004394@ds.study.iitm.ac.in
+
+
+202
+23f3004444@ds.study.iitm.ac.in
+
+
+203
+24ds1000079@ds.study.iitm.ac.in
+
+
+204
+24ds2000062@ds.study.iitm.ac.in
+
+
+205
+24ds2000101@ds.study.iitm.ac.in
+
+
+206
+24ds2000112@ds.study.iitm.ac.in
+
+
+207
+24ds3000028@ds.study.iitm.ac.in
+
+
+208
+24ds3000031@ds.study.iitm.ac.in
+
+
+209
+24ds3000074@ds.study.iitm.ac.in
+
+
+210
+24f1000010@ds.study.iitm.ac.in
+
+
+211
+24f1000400@ds.study.iitm.ac.in
+
+
+212
+24f1000784@ds.study.iitm.ac.in
+
+
+213
+24f1000925@ds.study.iitm.ac.in
+
+
+214
+24f1001396@ds.study.iitm.ac.in
+
+
+215
+24f1001439@ds.study.iitm.ac.in
+
+
+216
+24f1001520@ds.study.iitm.ac.in
+
+
+217
+24f1002390@ds.study.iitm.ac.in
+
+
+218
+24f1002474@ds.study.iitm.ac.in
+
+
+219
+24f2000994@ds.study.iitm.ac.in
+
+
+220
+24f2002746@ds.study.iitm.ac.in
+
+
+221
+24f2003375@ds.study.iitm.ac.in
+
+
+222
+24f2004863@ds.study.iitm.ac.in
+
+
+
+Kind regards,
+TDS Team","Q3, GA5 not accepting right answer",https://discourse.onlinedegree.iitm.ac.in/t/q3-ga5-not-accepting-right-answer/168011/7
+Is this something to worry about?,"This is nothing to worry about because as you can see in the Recent saves section, it has your score history. We have your entire submission history because we log that.
+Kind regards",GA5 Score Not Reflecting in The Page After Deadline,https://discourse.onlinedegree.iitm.ac.in/t/ga5-score-not-reflecting-in-the-page-after-deadline/168017/1
+Any mock or resource to practice from?,"Modules 1 - 5
+Questions will be similar to GAs and the content in the modules.
+ROE is quite hard. Only a small number will be able to do it in the given time frame.
+We will have some past ROEs as practise
+… watch sessions
+
+Kind regards",ROE instructions request,https://discourse.onlinedegree.iitm.ac.in/t/roe-instructions-request/168142/1
+Is it safe to assume that ROE is nothing but a “GA with extremely short deadline” since we don’t have proctors ? Or is the ROE more complex structured ?,"ROEs are always unique. They can be of any kind. We do not fix one method. Therefore its not possible to say what kind of questions will be there whether MCQ, MSQ or numerical or text etc.
+Kind regards",ROE instructions request,https://discourse.onlinedegree.iitm.ac.in/t/roe-instructions-request/168142/3
+Sir questions will be of Numeeical type or MCQs type as in earlier batches it was MCQs??,"The ROEs are not GAs with short deadlines. A GA question usually tests one concept in isolation. ROEs typically require you to combine multiple concepts and use multiple tools in order to answer the question. (in a very short time).
+If your goal is totally rely on the LLM to solve it for you… past experience shows us that ROEs complexity is usually difficult for an LLM to overcome without significant assistance from the “hooomann” 
+So practise with the concepts are going to be key without having to look up everything because looking up everything takes too much time. Collaboration with others is going be helpful. ROE is not proctored and is open internet. There is a reason for that. Its very hard.
+There will be a dataset or multiple datasets. Sometimes you may have to combine datasets to answer questions. You will have to extract data from the dataset. You will have to transform/clean the data and you will have to gain some information from the data, is what typical ROEs test.
+Kind regards",ROE instructions request,https://discourse.onlinedegree.iitm.ac.in/t/roe-instructions-request/168142/4
+Is there scope for collaboration in a 45 minute test?,"Depends on the collaborators and how they split up the tasks. If its a team that knows their roles and a team leader that can designate tasks correctly then quite possibly. In practise though that rarely happens.
+Also 45 mins is not a given, its a typical time we aim for. It can be shorter or longer depending on the nature of the questions in the ROE. Each one is unique. There have been ROEs as long as 2 hours and on the minimum side 30 mins.",ROE instructions request,https://discourse.onlinedegree.iitm.ac.in/t/roe-instructions-request/168142/7
+Could you please clarify if the submission dates will be changed accordingly? I am assuming it will have to be changed for Assignment 7 as well.,"@Yogesh GA6 will be released sometime this week. All GAs have a minimum 9 days for submissions.
+We do not have an ETA for Project 2 yet.
+Kind regards",Project 2 and Week 6 assignment,https://discourse.onlinedegree.iitm.ac.in/t/project-2-and-week-6-assignment/168303/1
+"Could you please confirm if there is any flexibility in the timings? Additionally, I would appreciate it if you could provide details on when and how the mock links will be shared.","It is not mandatory to attempt mocks at 7pm. But we will solve it in real time during the session. Thats why we are releasing it 1 hour before. We will freeze the form submissions during the solving session and then reopen it later.
+ROE is not like other exams you have done so far in this entire diploma.
+Solving it leisurely will give you a false sense of your capabilities.
+The truth is everyone can get full marks for ROE given enough time.
+The problem is the lack of time.
+So if you want to really check ROE readiness, fix the timer alarm for 45 mins and attempt it genuinely within the 45 mins. Only then will you know where you stand.
+Additionally, each ROE is completely different from the next. If you manage to do good in one is ZERO guarantee that you will do good in the next.
+Thats why do all 4 mock ROEs. ROE is not like any other exam. Other exams have the same types of questions. Not with ROE.
+The real ROE will be also something that no one has seen before.
+But we will help you be as ready as possible for it.
+Kind regards",Clarification regarding Mock ROE Timings,https://discourse.onlinedegree.iitm.ac.in/t/clarification-regarding-mock-roe-timings/168384/1
+how are we supposed to give the mock ROE? where can I find the link? should i join gmeet while solving mock ROE or is it non-proctored? kindly clarify these doubts. thanks in advance!,"You will get an email at 7pm with the ROE dataset and the question form.
+I will also add the same in the student seek portal.
+Mock ROEs are not proctored (its a mock!) and the actual ROE is not proctored either!
+The gmeet is after the mock ROE where it will be solved live by the TDS team.
+Kind regards",Clarification regarding Mock ROE Timings,https://discourse.onlinedegree.iitm.ac.in/t/clarification-regarding-mock-roe-timings/168384/4
+will the questions and dataset be available after time limit?,"carlton:
+
+No, we do not provide solutions as a notebook. The ROE will be solved during the live session.
+
+
+yes in live session ROE was solved but while taking reference for Q1 from live session from TAs to see how this question might be solved as i was getting wrong answer, but TA also didnt solved that question in correct manner he got wrong, I think we should have at least 1 standard ref for all the questions of this mock roe to understand our mistakes in solving this questions pls understand thanks,
+also when i went throught live session recording i can see only 1 screen of 1 ta",Clarification regarding Mock ROE Timings,https://discourse.onlinedegree.iitm.ac.in/t/clarification-regarding-mock-roe-timings/168384/6
+will the solutions be available for later reference with the questions?,"Hi @shubhamatkal ,
+For question1 provided answer is wrong.
+Regarding yesterday’s ROE we will send out ipynb with snippets of code that’s requried to solve questions.
+For Today’s ROE you will be able to check answers immediately
+For Thrusday’s ROE as well there will be some mechanism for checking answers.
+Kind regards.",Clarification regarding Mock ROE Timings,https://discourse.onlinedegree.iitm.ac.in/t/clarification-regarding-mock-roe-timings/168384/6
+Should we use data mentioned in headline of form or mail data. ?,"From google calendar
+
+
+Google Workspace
+
+
+
+Shareable Online Calendar and Scheduling - Google Calendar
+Use Google Calendar to share meetings and schedule appointments, for managing what matters in your business and personal life, with Google Workspace.
+
+
+
+
+
+You should subscribe to tds calendar. Its available in the TDS Portal
+meet.google.com/odh-ycbm-ahj","Mock ROE 1, 2, 3, 4 [TDS Jan 2025]",https://discourse.onlinedegree.iitm.ac.in/t/mock-roe-1-2-3-4-tds-jan-2025/168449/3
+live session gmeet link is not available?,"After seeing the Mock, I have to say, please give more time for ROE exam, anything less than 1 hour seems extremely difficult.","Mock ROE 1, 2, 3, 4 [TDS Jan 2025]",https://discourse.onlinedegree.iitm.ac.in/t/mock-roe-1-2-3-4-tds-jan-2025/168449/10
+where can we find link for recording of live session which happened after this mock roe ?,"@23f2003413
+We will have it uploaded sometime this morning.
+It has two parts to it. The first part is the TAs solving the Mock in real time (however this is not a solutions session). The purpose of it is to get you to realise some key things:
+
+The chaos of ROE.
+The adrenaline, speed of thought, the need to be very familiar with your tools.
+The limited time you have to use GPT effectively. It will help you with minor work flows, but not with complex tasks. (watch the session debrief to hear a clear articulation about this).
+The value of efficient and effective collaboration. A hodgepodge of many people will not make an effective solutions team.
+The ABSOLUTE importance of creating your own cheat sheet with code snippets that will help you solve ROE quickly
+Workflow of ROE: Data Extraction → Data Cleaning → Data Transformation → Data Analyisis → Information to answer questions
+The pitfalls of getting fixated on a question (a very common mistake and you can see it happen in the real time solving session as well).
+How limited the time is.
+
+The second part of the session was a debrief for the sheer shock that students felt. The goal of the mock was to acclimatise you to the shock of ROE.
+Past terms never had this benefit. We thought to take the shock factor out so that you can be better prepared than any term before. Emotions were raw. But this is normal. What is unusual is to have a preview of it before ROE. So the discussions were very intense even for us.
+Today’s Mock ROE will be more like a traditional solving session and deal with new aspects. It has the added bonus of being hosted on an exam server (without a time limit).
+I would still STRONGLY advise setting a horrible sounding alarm to acclimatise to the pressure cooker of ROE. You will make stupid mistakes under pressure. The TAs did yesterday as well. So best to reduce this factor by getting used to the clock.
+Kind regards","Mock ROE 1, 2, 3, 4 [TDS Jan 2025]",https://discourse.onlinedegree.iitm.ac.in/t/mock-roe-1-2-3-4-tds-jan-2025/168449/12
+When will it reopen?,"shubhamatkal:
+
+df_gobindpur = df[df[""AC""].str.contains(""SRI GOBINDPUR|SRIHARGOBINDPUR|SRI HARGOBINDPUR"", case=False, na=False)]
+
+
+
+For this kind of name difference you can use Openrefine software
+
+
+
+ shubhamatkal:
+
+which is 50.60 , but answer is 62.64
+
+
+That answer is wrong, we will be releasing a script with correct python snippets.
+Kind regards.","Mock ROE 1, 2, 3, 4 [TDS Jan 2025]",https://discourse.onlinedegree.iitm.ac.in/t/mock-roe-1-2-3-4-tds-jan-2025/168449/13
+Sir can you at least increase the time limit from 45 minutes to 1 hour?,"The time limit for ROE will be set according to the difficulty level of the ROE.
+Kind regards",Tds roe exam date shift,https://discourse.onlinedegree.iitm.ac.in/t/tds-roe-exam-date-shift/168458/7
+Could you please look into the above issue?,"Regarding your point of the short term benefits of grades vs the long term benefits of learning, I think I’m speaking for a lot of my peers that we’re not concerned about grades at this point, we just at least want to pass this course.
+I’m a standalone degree potential student and while I have learned a lot from the modules and do not condone dumbing it down, but at least after all this hard work I should be able to pass the course.
+While grades don’t matter in front of learning things but when passing the course itself is on the line then the learnings are overshadowed by the lack of marks. I want to invest myself in the ROE and the remaining project, but at this point I’m so frustrated about getting at least 40 that rather than a valuable learning experience, this course seems like a burden to me.
+I understand that the grading can’t be changed. All I hope and request that project 2 and end term turn out to be more approachable than project 1 and ROE so that after all this hard work, students like me at least get the privilege to pass.",Concerns Regarding TDS Course Difficulty and Grading Fairness,https://discourse.onlinedegree.iitm.ac.in/t/concerns-regarding-tds-course-difficulty-and-grading-fairness/168476/7
+What’s the actual purpose of impossible ROE exam?.,"Nicely highlighted the concern of all students.
+TDS as a course has been really tedious this term. It’s a headache for those with non-technical background.
+IITM Management please look into this matter on urgent basis.",Concerns Regarding TDS Course Difficulty and Grading Fairness,https://discourse.onlinedegree.iitm.ac.in/t/concerns-regarding-tds-course-difficulty-and-grading-fairness/168476/7
+"Why should you copy? Because in real life, there’s no time to re-invent the wheel. You’ll be working in teams on the shoulders of giants. It’s important to learn how to do that well.",Dam… Even when I have finished the course (with a B ) I’m still getting dragged into this   …,Concerns Regarding TDS Course Difficulty and Grading Fairness,https://discourse.onlinedegree.iitm.ac.in/t/concerns-regarding-tds-course-difficulty-and-grading-fairness/168476/9
+Whoever wants can participate and then we go into breakout rooms and each group solves a particular question and then we all share the code so we can complete the ROE faster and more effienctly?,"Yeah they said you can take help anyway possible even  to ask a cat also or a pet, im not sure",Create a Question solving groups for ROE,https://discourse.onlinedegree.iitm.ac.in/t/create-a-question-solving-groups-for-roe/168567/1
+Are we allowed to do that?,Asking help is different from sharing answers in a public forum. I don’t think they will permit this.,Create a Question solving groups for ROE,https://discourse.onlinedegree.iitm.ac.in/t/create-a-question-solving-groups-for-roe/168567/2
+If the ROE is like how it was for MOCK ROE1 then this probably wont work right?,Their whole concept of implicit learning disappears when people start sharing answers in a public forum.,Create a Question solving groups for ROE,https://discourse.onlinedegree.iitm.ac.in/t/create-a-question-solving-groups-for-roe/168567/7
+Thoughts?,"I created a discord
+
+
+Discord
+
+
+Join the ACING ROE 1 Discord Server!
+Check out the ACING ROE 1 community on Discord – hang out with 1 other members and enjoy free voice and text chat.
+
+
+
+
+
+@all",Create a Question solving groups for ROE,https://discourse.onlinedegree.iitm.ac.in/t/create-a-question-solving-groups-for-roe/168567/7
+Would we be able to start work on the questions 1 hour before the exam start time?,"All week 7 sessions are ROE mock solving questions. Only the 4th session was a special session and was labelled as such, but it also has a mock solving component. These are all available on the Youtube channel",Remote Online Exam [TDS Jan 2025],https://discourse.onlinedegree.iitm.ac.in/t/remote-online-exam-tds-jan-2025/168832/3
+I am too sleepy to work on it now… So seriously… PRs are not only appreciated but needed. Just add the basic parsing code or image manipulation for ga5. I will try and add in the morning but who doesn’t like Good PRs? Also mentioning @23f2005325 (Aishik) here for his wonderful PR which I have now merged.,"hi, thanks to you and the other contributors for the effort
+i have added llm week-3 codes through pull request. my code my not be perfect. but when I ran it in my laptop, it worked fine. pls do verify once before ROE",ROE Common Snippets Repo Feb 2025,https://discourse.onlinedegree.iitm.ac.in/t/roe-common-snippets-repo-feb-2025/168901/2
+Why?,This time I’ll create a functioning script way before deadline for everyone to use .,Project 2 - TDS Solver - Shared Data Pool,https://discourse.onlinedegree.iitm.ac.in/t/project-2-tds-solver-shared-data-pool/169045/1
+Is this because of any glitch? Anyone of you having the same error?,"Dear Sir,
+I would like to bring this to your attention that even though I submitted the ROE multiple times, the dashboard is showing absent.
+I hope the issue will be resolved at earliest as I am not the only one facing this issue
+Screenshot 2025-03-07 212639524×386 47.4 KB",Programming Quiz 1 in Student Dashboard (label for ROE scores) - showing absent or incorrect,https://discourse.onlinedegree.iitm.ac.in/t/programming-quiz-1-in-student-dashboard-label-for-roe-scores-showing-absent-or-incorrect/169369/1
+I have attached a screenshot for your reference. I assume this might be a backend issue or that the scores are still being updated. Could you kindly look into this and confirm?,I am experiencing the same issue. I ensured that my submission was completed and saved before the deadline. @carlton @Jivraj,Programming Quiz 1 in Student Dashboard (label for ROE scores) - showing absent or incorrect,https://discourse.onlinedegree.iitm.ac.in/t/programming-quiz-1-in-student-dashboard-label-for-roe-scores-showing-absent-or-incorrect/169369/4
+I was attend the roe. Why is it showing as absent?,"IMG_20250307_1528271012×1136 91 KB
+I’m experiencing a similar issue, I attended and submitted the exam but it’s showing absent",Programming Quiz 1 in Student Dashboard (label for ROE scores) - showing absent or incorrect,https://discourse.onlinedegree.iitm.ac.in/t/programming-quiz-1-in-student-dashboard-label-for-roe-scores-showing-absent-or-incorrect/169369/5
+Are the marks shown after adding bonus or before?,"Sir even for me it is showing absent , I had attended roe and submitted the answer.",Programming Quiz 1 in Student Dashboard (label for ROE scores) - showing absent or incorrect,https://discourse.onlinedegree.iitm.ac.in/t/programming-quiz-1-in-student-dashboard-label-for-roe-scores-showing-absent-or-incorrect/169369/9
+"Could you kindly confirm if this understanding is accurate? Additionally, please let me know if there are any other prerequisites to be met.","Best 2/5 first weekly GA >=40
+Final course score T = 0.15GAA + 0.2 ROE1 + 0.2 P1 + 0.2P2 + 0.25F
+Final T >= 40 (or less depending on any certificates for disabilities/SCST/OB etc.)",Clarification on Passing Criteria for TDS – January 2025 Term,https://discourse.onlinedegree.iitm.ac.in/t/clarification-on-passing-criteria-for-tds-january-2025-term/169807/1
+"I had raised this as a ticket in the Support desk(21/Feb) in the past as discourse was not available to me at that time, but this didn’t get resolved. I saw a similar older thread where it was mentioned that this is not something to worry about but now it is showing in the portal that I am not allowed to take the End Term Exam. What can be done for this?","@22f3001561 GA5 like all the prior GAs for TDS Jan 25 term were all to be submitted through the graded assignment page. Which is in the link provided (it is actually in the screen shot you have provided).
+All the previous GA 1 through 4 were also exactly the same.
+We have no evidence you ever submitted any of the other GAs except GA1.
+Kind regards",Problem with TDS GA Scores,https://discourse.onlinedegree.iitm.ac.in/t/problem-with-tds-ga-scores/170131/1
+1. Graded Assignments (GA),"We do not know yet. Please read reply to the original poster.
+Thanks,
+Kind regards","Concerns Regarding Various Issues: Graded Assignments, Project Doubts, and ROE Score Updates",https://discourse.onlinedegree.iitm.ac.in/t/concerns-regarding-various-issues-graded-assignments-project-doubts-and-roe-score-updates/170147/1
+2. Project Updates,"Thank you for your response @carlton and for addressing our concerns. We appreciate the efforts of the entire team in ensuring a smooth transition and improving the course experience.
+The reason for raising this separate post is that multiple doubts related to the course have been left unanswered over the past few days. Even if the course team provides a response without an immediate resolution, it would help us understand the ongoing process and what to expect next.
+We will wait for the resolution of GA6 issues and the release of Project 1 results. Regarding ROE, we initially assumed that marks would be awarded in the same manner as GA4 (110/100); however, now that you have clarified the maximum marks is 100.
+Meanwhile, we would like to know if a session can be arranged to discuss the solution for Project 1. This would be beneficial for us in working on Project 2. Additionally, any updates regarding the pending queries for Project 2 would be greatly appreciated.
+Looking forward to your response.
+Regards,
+Lakshay","Concerns Regarding Various Issues: Graded Assignments, Project Doubts, and ROE Score Updates",https://discourse.onlinedegree.iitm.ac.in/t/concerns-regarding-various-issues-graded-assignments-project-doubts-and-roe-score-updates/170147/1
+Struggling to phrase your question clearly? Use the TDS GPT Assistant to refine your question before posting.,"@carlton sir, I too prefer a recording. I did not even attend the session due to personal work which I couldn""t avoid. Pls support",[TDS JAN 25] Imp. Announcement for Project 2,https://discourse.onlinedegree.iitm.ac.in/t/tds-jan-25-imp-announcement-for-project-2/170413/1
+Will this session be recorded and shared later?,"@kushabarodekar @Muthupalaniappan
+As usual recording will be uploaded to youtube.",[TDS JAN 25] Imp. Announcement for Project 2,https://discourse.onlinedegree.iitm.ac.in/t/tds-jan-25-imp-announcement-for-project-2/170413/3
+"I have completed a working project of P2, but I want to test it out with actual questions from the GA’s. Is there anyone that can provide with sample question structure, or 1 or 2 questions as a form of ‘test cases’ so that we can try and fix our project?",You can do a curl post request or use something like Thunderclient or Postman. If you used fastapi then in the /docs path of your link you will find the open API user interface which you can also use for testing.,Project 2: How to test questions from the GA's,https://discourse.onlinedegree.iitm.ac.in/t/project-2-how-to-test-questions-from-the-gas/171422/1
